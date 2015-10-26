@@ -15,7 +15,7 @@ You care about responsiveness and different display sizes! You want variable wid
 
 Solution: Just wrap it in `AutoWidth`.
 
-~~~ jsx
+~~~ jsx
 import D3 from 'react-d3-components';
 import AutoWidth from '@zalando/react-automatic-width';
 
