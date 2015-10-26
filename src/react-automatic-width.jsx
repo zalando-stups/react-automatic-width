@@ -1,3 +1,5 @@
+import React from 'react';
+
 class AutomaticWidth extends React.Component {
     constructor() {
         super();
@@ -17,15 +19,12 @@ class AutomaticWidth extends React.Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         let boundListener = this._resizeHandler.bind(this);
         window.addEventListener('resize', boundListener);
         this.setState({
             listener: boundListener
         });
-    }
-
-    componentDidMount() {
         this.state.listener();
     }
 

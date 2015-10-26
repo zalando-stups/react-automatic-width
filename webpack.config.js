@@ -12,24 +12,30 @@ module.exports = {
         libraryTarget: 'umd'
     },
     plugins: [
-        new webpack.BannerPlugin(require('./banner'))
-        // new webpack.optimize.UglifyJsPlugin()
+        new webpack.BannerPlugin(require('./banner')),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.DefinePlugin({
+          "process.env": {
+            NODE_ENV: JSON.stringify("production")
+          }
+        }),
     ],
-    externals: {
-        'React': 'react'
-    },
     resolve: {
-        extensions: ['', '.jsx']
+        extensions: ['', 'js', '.jsx']
     },
     eslint: {
         configFile: '.eslintrc'
+    },
+    externals: {
+        'react': 'react'
     },
     module: {
         preLoaders: [
             { test: /\.jsx$/, exclude: /node_modules/, loader: 'eslint' },
         ],
         loaders: [
-            { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel' },
+            { test: /\.jsx?$/, loader: 'babel' },
         ]
     }
 };

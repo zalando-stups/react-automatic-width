@@ -8,7 +8,7 @@ So you found those cool components that do what you want, but they work on fixed
 import D3 from 'react-d3-components';
 
 <D3.BarChart
-    width={500} /> // :(
+    width={500} /> // ;_;
 ~~~
 
 You care about responsiveness and different display sizes! You want variable width! HULK SMASH!
