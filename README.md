@@ -4,7 +4,7 @@
 
 So you found those cool components that do what you want, but they work on fixed width! ([fixed-data-table](https://facebook.github.io/fixed-data-table/) or [react-d3-components](https://github.com/codesuki/react-d3-components) for instance.)
 
-~~~ jsx
+~~~ jsx
 import D3 from 'react-d3-components';
 
 <D3.BarChart
@@ -32,11 +32,11 @@ Install it with:
 
 Then load it however you want (it's an UMD module). It accepts any property you throw at it, this way you can use classes and media queries for the autowidth container.
 
-~~~ jsx
-<AutoWidth className='responsive'>
-    <D3.BarChart />
-</AutoWidth>
-~~~ 
+
+    <AutoWidth className="responsive">
+        <D3.BarChart />
+    </AutoWidth>
+
 
 ## How?
 
