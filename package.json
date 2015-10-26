@@ -4,7 +4,8 @@
   "description": "Automatically sets width property on child components",
   "main": "dist/react-automatic-width.js",
   "scripts": {
-    "test": "echo \"Sorry\""
+    "test": "echo \"Sorry\"",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
