@@ -1,19 +1,20 @@
 import React from 'react';
 
 class AutomaticWidth extends React.Component {
-    constructor(props) {
+    constructor() {
         super();
         this.state = {
             listener: null,
-            width: props.initialWidth || 1000
+            width: 0
         };
     }
 
      _resizeHandler() {
-        let dom = this.refs.autowidthWrapper.getDOMNode();
-        if (dom.clientWidth !== this.state.width) {
+        let dom = this.refs.autowidthWrapper.getDOMNode(),
+            {clientWidth} = dom;
+        if (clientWidth !== this.state.width && clientWidth > 0) {
             this.setState({
-                width: dom.clientWidth
+                width: clientWidth
             });
         }
     }
@@ -41,6 +42,11 @@ class AutomaticWidth extends React.Component {
                 </div>;
     }
 }
-AutomaticWidth.displayName='Automatic Width';
+AutomaticWidth.displayName = 'AutomaticWidth';
+AutomaticWidth.propTypes = {
+    children: React.PropTypes.oneOf([
+        React.PropTypes.array,
+        React.PropTypes.object
+    ])
+};
 export default AutomaticWidth;
-
