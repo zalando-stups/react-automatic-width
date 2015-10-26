@@ -21,11 +21,11 @@ class AutomaticWidth extends React.Component {
 
     componentDidMount() {
         let boundListener = this._resizeHandler.bind(this);
+        boundListener();
         window.addEventListener('resize', boundListener);
         this.setState({
             listener: boundListener
         });
-        this.state.listener();
     }
 
     componentWillUnmount() {
