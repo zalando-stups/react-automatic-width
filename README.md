@@ -1,6 +1,8 @@
 # react-automatic-width
 
-So you found those cool components that do what you want, but they work on fixed with ([fixed-data-table](https://facebook.github.io/fixed-data-table/) or [react-d3-components](https://github.com/codesuki/react-d3-components) for instance).
+[![Build Status](https://travis-ci.org/zalando/react-automatic-width.svg?branch=master)](https://travis-ci.org/zalando/react-automatic-width) 
+
+So you found those cool components that do what you want, but they work on fixed width! ([fixed-data-table](https://facebook.github.io/fixed-data-table/) or [react-d3-components](https://github.com/codesuki/react-d3-components) for instance.)
 
 ~~~ jsx
 import D3 from 'react-d3-components';
@@ -31,6 +33,10 @@ It attaches a listener to `resize` event of `window`. In it, the component reads
 * Uses `addEventListener`, so no IE8 currently. PRs welcome.
 * Uses `clientWidth` because that worked on my current Chrome. Might be funky in your browser. PRs welcome.
 * Not clear what should happen if window is resized while container is invisible. Currently zero-widths just get ignored.
+
+# Dependencies
+
+Written for React 0.13. Did not test with React 0.14, but should work since `ref.findDOMNode` is deprecated, but not removed.
 
 # License
 

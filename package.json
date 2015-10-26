@@ -1,0 +1,38 @@
+{
+  "name": "@zalando/react-automatic-width",
+  "version": "0.0.1",
+  "description": "Automatically sets width property on child components",
+  "main": "dist/react-automatic-width.js",
+  "scripts": {
+    "test": "echo \"Sorry\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zalando/react-automatic-width.git"
+  },
+  "peerDependencies": {
+    "react": "^0.13.0 || ^0.14.0"
+  },
+  "keywords": [
+    "react",
+    "responsive",
+    "width",
+    "automatic",
+    "flexible"
+  ],
+  "author": "Nikolaus Piccolotto <nikolaus.piccolotto@zalando.de>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/zalando/react-automatic-width/issues"
+  },
+  "homepage": "https://github.com/zalando/react-automatic-width#readme",
+  "devDependencies": {
+    "babel-core": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "eslint": "^1.7.3",
+    "eslint-loader": "^1.1.0",
+    "eslint-plugin-react": "^3.6.3",
+    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
+    "webpack": "^1.12.2"
+  }
+}
