@@ -10,7 +10,7 @@ class AutomaticWidth extends React.Component {
     }
 
      _resizeHandler() {
-        let dom = this.refs.autowidthWrapper.getDOMNode(),
+        let dom = this.refs.autowidthWrapper,
             {clientWidth} = dom;
         if (clientWidth !== this.state.width && clientWidth > 0) {
             this.setState({
@@ -33,20 +33,13 @@ class AutomaticWidth extends React.Component {
     }
 
     render() {
+        var {width} = this.state;
         return <div ref='autowidthWrapper' {...this.props}>
-                    {React.Children.map(this.props.children, c =>
-                        React.addons.cloneWithProps(c, {
-                            width: this.state.width
-                        })
-                    )}
+                    {React.Children.map(
+                        this.props.children,
+                        c => React.cloneElement(c, {width}))}
                 </div>;
     }
 }
 AutomaticWidth.displayName = 'AutomaticWidth';
-AutomaticWidth.propTypes = {
-    children: React.PropTypes.oneOf([
-        React.PropTypes.array,
-        React.PropTypes.object
-    ])
-};
 export default AutomaticWidth;

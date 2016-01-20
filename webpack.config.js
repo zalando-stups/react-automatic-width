@@ -31,11 +31,15 @@ module.exports = {
         'react': 'react'
     },
     module: {
-        preLoaders: [
-            { test: /\.jsx$/, exclude: /node_modules/, loader: 'eslint' },
-        ],
-        loaders: [
-            { test: /\.jsx?$/, loader: 'babel' },
-        ]
+        preLoaders: [{
+            test: /\.jsx$/,
+            exclude: /node_modules/,
+            loader: 'eslint'
+        }],
+        loaders: [{
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel'
+        }]
     }
 };
