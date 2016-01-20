@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register test/*.test.js",
     "lint": "eslint src/react-automatic-width.jsx",
-    "build": "webpack"
+    "build": "webpack",
+    "test-coverage": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --compilers js:babel-register test/*.test.js && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "babel-preset-stage-2": "^6.3.13",
     "babel-register": "^6.4.3",
     "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
     "domino": "^1.0.21",
     "eslint": "^1.7.3",
     "eslint-loader": "^1.1.0",
