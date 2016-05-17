@@ -1,6 +1,6 @@
 {
   "name": "@zalando/react-automatic-width",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Automatically sets width property on child components",
   "main": "dist/react-automatic-width.js",
   "scripts": {
