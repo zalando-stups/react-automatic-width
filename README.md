@@ -48,10 +48,6 @@ It attaches a listener to `resize` event of `window`. In it, the component reads
 * Uses `clientWidth` because that worked on my current Chrome. Might be funky in your browser. PRs welcome.
 * Not clear what should happen if window is resized while container is not displayed. Currently zero-widths just get ignored.
 
-## Dependencies
-
-Written for React 0.13. Did not test with React 0.14, but should work since `ref.findDOMNode` is deprecated, but not removed.
-
 ## License
 
 Apache 2.0
