@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/zalando/react-automatic-width.svg?branch=master)](https://travis-ci.org/zalando/react-automatic-width) [![Coverage Status](https://coveralls.io/repos/github/zalando/react-automatic-width/badge.svg?branch=master)](https://coveralls.io/github/zalando/react-automatic-width?branch=master)
 
-So you found those cool components that do what you want, but they work on fixed width! ([fixed-data-table](https://facebook.github.io/fixed-data-table/) or [react-d3-components](https://github.com/codesuki/react-d3-components) for instance.)
+So, you found those cool components like [fixed-data-table](https://facebook.github.io/fixed-data-table/) and [react-d3-components](https://github.com/codesuki/react-d3-components) that do whatever you want, with just one problem: They only work on fixed width! You care about responsiveness and different display sizes. You want variable width! **HULK SMASH!**
+
+One solution: Just wrap it in `AutoWidth`, so that this:
 
 ~~~ jsx
 import D3 from 'react-d3-components';
@@ -11,9 +13,7 @@ import D3 from 'react-d3-components';
     width={500} /> // ;_;
 ~~~
 
-You care about responsiveness and different display sizes! You want variable width! HULK SMASH!
-
-Solution: Just wrap it in `AutoWidth`.
+Can work like this:
 
 ~~~ jsx
 import D3 from 'react-d3-components';
@@ -24,29 +24,37 @@ import AutoWidth from '@zalando/react-automatic-width';
 </AutoWidth>
 ~~~
 
+react-automatic-width is a React component that automatically sets `width` property on child components. It works out-of-the-box and accepts any property you throw at it. This way, you can use classes and media queries for the autowidth container.
+
+It does its job by attaching a listener to the `resize` event of `window`. In it, react-automatic-width reads the current width of its DOM node and sets this as the `width` property on its children.
+
+It's currently not being actively developed, but that is because the codebase is tiny and works. If appropriate it will be updated to accomodate future React versions.
+
 ## Installation & Usage
 
-Install it with:
+Install react-automatic-width with:
 
     npm i -S @zalando/react-automatic-width
 
-Then load it however you want (it's an UMD module). It accepts any property you throw at it, this way you can use classes and media queries for the autowidth container.
+Then load it however you want (Example: ES6):
 
+    import AutoWidth from '@zalando/react-automatic-width'
 
+Finally omit the `width` property on your component and wrap it in `AutoWidth`:
+
+~~~ jsx
     <AutoWidth className="responsive">
         <D3.BarChart />
     </AutoWidth>
+~~~
 
+## Issues/Contributing
 
-## How?
+This project welcomes contributions from the community. Here are some issues and areas where we could use some help:
 
-It attaches a listener to `resize` event of `window`. In it, the component reads the current width of its DOM node and sets this as `width` property on its children.
-
-## Issues
-
-* Uses `addEventListener`, so no IE8 currently. PRs welcome.
-* Uses `clientWidth` because that worked on my current Chrome. Might be funky in your browser. PRs welcome.
-* Not clear what should happen if window is resized while container is not displayed. Currently zero-widths just get ignored.
+* Uses `addEventListener`, so currently there's no IE8. PRs welcome.
+* Uses `clientWidth` because that worked in Chrome forty-something. Might be funky in your browser. PRs welcome.
+* Not clear what should happen if the window is resized while the container is not displayed. Currently zero-widths just get ignored. Drop a line via the Issues tracker if you have some ideas.
 
 ## License
 
