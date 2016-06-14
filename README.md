@@ -28,7 +28,7 @@ react-automatic-width is a React component that automatically sets `width` prope
 
 It does its job by attaching a listener to the `resize` event of `window`. In it, react-automatic-width reads the current width of its DOM node and sets this as the `width` property on its children. Since it creates an event listener *every* time it's used, you might want to reconsider when you have a lot of components that need to be wrapped separately.
 
-It's currently not being actively developed, but that is because the codebase is tiny and works. If appropriate it will be updated to accomodate future React versions.
+It's currently not under active development because the codebase is tiny and works. If appropriate, it will be updated to accomodate future React versions.
 
 ## Installation & Usage
 
@@ -36,11 +36,11 @@ Install react-automatic-width with:
 
     npm i -S @zalando/react-automatic-width
 
-Then load it however you want (Example: ES6):
+Then load it however you want (example: ES6):
 
     import AutoWidth from '@zalando/react-automatic-width'
 
-Finally omit the `width` property on your component and wrap it in `AutoWidth`:
+Finally, omit the `width` property on your component and wrap it in `AutoWidth`:
 
 ~~~ jsx
     <AutoWidth className="responsive">
