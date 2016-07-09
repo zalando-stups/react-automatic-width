@@ -26,7 +26,7 @@ import AutoWidth from '@zalando/react-automatic-width';
 
 react-automatic-width is a React component that automatically sets `width` property on child components. It works out-of-the-box and accepts any property you throw at it. This way, you can use classes and media queries for the autowidth container.
 
-It does its job by attaching a listener to the `resize` event of `window`. In it, react-automatic-width reads the current width of its DOM node and sets this as the `width` property on its children. Since it creates an event listener *every* time it's used, you might want to reconsider when you have a lot of components that need to be wrapped separately.
+It does its job by attaching a listener to the `resize` event of `window`. In it, react-automatic-width reads the current width of its DOM node and sets this as the `width` property on its children. Since it creates an event listener *every* time it's used, you might want to reconsider when you have a lot of components that need to be wrapped separately. [`react-dimensions`](https://github.com/digidem/react-dimensions) might then be useful to you as it offers the option to use [`element-resize-event`](https://github.com/KyleAMathews/element-resize-event/) underneath (using `requestAnimationFrame`).
 
 It's currently not under active development because the codebase is tiny and works. If appropriate, it will be updated to accomodate future React versions.
 
