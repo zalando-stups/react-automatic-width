@@ -52,7 +52,6 @@ Finally, omit the `width` property on your component and wrap it in `AutoWidth`:
 
 This project welcomes contributions from the community. Here are some issues and areas where we could use some help:
 
-* Uses `addEventListener`, so currently there's no IE8. PRs welcome.
 * Uses `clientWidth` because that worked in Chrome forty-something. Might be funky in your browser. PRs welcome.
 * Not clear what should happen if the window is resized while the container is not displayed. Currently zero-widths just get ignored. Drop a line via the Issues tracker if you have some ideas.
 
