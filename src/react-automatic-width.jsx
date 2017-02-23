@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import debounce from './utils/debounce';
 
-class AutomaticWidth extends React.Component {
+export default class AutomaticWidth extends React.Component {
+    static displayName = 'AutomaticWidth';
+
+    static propTypes = {
+        debounceWait: PropTypes.number
+    };
+
     constructor() {
         super();
         this.state = {
@@ -9,7 +16,7 @@ class AutomaticWidth extends React.Component {
         };
     }
 
-     _resizeHandler() {
+    _resizeHandler() {
         let dom = this.refs.autowidthWrapper,
             {clientWidth} = dom;
         if (clientWidth !== this.state.width && clientWidth > 0) {
@@ -20,7 +27,10 @@ class AutomaticWidth extends React.Component {
     }
 
     componentDidMount() {
-        let boundListener = this._resizeHandler.bind(this);
+        const {debounceWait} = this.props;
+        const DEBOUNCE_WAIT = 100;
+
+        const boundListener = debounce(this._resizeHandler.bind(this), debounceWait || DEBOUNCE_WAIT, true);
         boundListener();
         window.addEventListener('resize', boundListener);
         this.setState({
@@ -33,7 +43,7 @@ class AutomaticWidth extends React.Component {
     }
 
     render() {
-        var {width} = this.state;
+        const {width} = this.state;
         return <div ref='autowidthWrapper' {...this.props}>
                     {React.Children.map(
                         this.props.children,
@@ -41,5 +51,3 @@ class AutomaticWidth extends React.Component {
                 </div>;
     }
 }
-AutomaticWidth.displayName = 'AutomaticWidth';
-export default AutomaticWidth;

@@ -48,6 +48,13 @@ Finally, omit the `width` property on your component and wrap it in `AutoWidth`:
     </AutoWidth>
 ~~~
 
+Optionally, you can set up the debouncing rate in milliseconds (default is 100)
+~~~ jsx
+    <AutoWidth className="responsive" debounceWait={150}>
+        <D3.BarChart />
+    </AutoWidth>
+~~~
+
 ## Issues/Contributing
 
 This project welcomes contributions from the community. Here are some issues and areas where we could use some help:

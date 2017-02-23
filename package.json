@@ -4,10 +4,10 @@
   "description": "Automatically sets width property on child components",
   "main": "dist/react-automatic-width.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register test/*.test.js",
+    "test": "mocha --compilers js:babel-register test/{**,.}/*.test.js",
     "lint": "eslint src/react-automatic-width.jsx",
     "build": "webpack",
-    "test-coverage": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --compilers js:babel-register test/*.test.js && cat ./coverage/lcov.info | coveralls",
+    "test-coverage": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --compilers js:babel-register test/{**,.}/*.test.js && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm test && npm run-script build"
   },
   "repository": {
@@ -41,6 +41,8 @@
     "babel-preset-stage-2": "^6.3.13",
     "babel-register": "^6.4.3",
     "chai": "^3.4.1",
+    "chai-spies": "^0.7.1",
+    "sinon": "^1.17.7",
     "coveralls": "^2.11.6",
     "domino": "^1.0.21",
     "eslint": "^1.7.3",
