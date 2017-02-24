@@ -1,7 +1,18 @@
 {
-    "presets": [
+  "env": {
+    "production": {
+      "presets": [
         ["es2015", { "modules": false }],
         "react",
         "stage-2"
-    ]
+      ]
+    },
+    "test": {
+      "presets": [
+        ["es2015", { "modules": "commonjs" }],
+        "react",
+        "stage-2"
+      ]
+    }
+  }
 }
