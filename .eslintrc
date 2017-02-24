@@ -14,11 +14,9 @@
         "React": true
     },
     "rules": {
-        "quotes": [2, "single"],
         "eol-last": 0,
         "no-underscore-dangle": 0,
         "camelcase": 0,
-        "jsx-quotes": [2, "prefer-single"],
         // react rules
         "react/display-name": 1,
         "react/jsx-boolean-value": 1,

@@ -22,10 +22,10 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: ['', 'js', '.jsx']
+        extensions: ['', '.js', '.jsx']
     },
     eslint: {
-        configFile: '.eslintrc'
+        formatter: require('eslint-formatter-pretty')
     },
     externals: {
         'react': 'react'

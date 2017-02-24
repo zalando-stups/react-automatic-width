@@ -42,16 +42,17 @@
     "babel-register": "^6.4.3",
     "chai": "^3.4.1",
     "chai-spies": "^0.7.1",
-    "sinon": "^1.17.7",
     "coveralls": "^2.11.6",
     "domino": "^1.0.21",
     "eslint": "^1.7.3",
+    "eslint-formatter-pretty": "^1.1.0",
     "eslint-loader": "^1.1.0",
     "eslint-plugin-react": "^3.6.3",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "sinon": "^1.17.7",
     "webpack": "^1.12.11"
   }
 }
